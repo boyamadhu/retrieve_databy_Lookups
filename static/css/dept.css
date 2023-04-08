@@ -1,0 +1,19 @@
+#a {
+    background-color: lightgreen;
+    color: white;
+}
+.b:hover {
+    cursor: pointer;
+    background-color: brown;
+    color: white;
+}
+.c:hover {
+    cursor: pointer;
+    background-color: rgb(4, 90, 30);
+    color: white;
+}
+.d:hover {
+    cursor: pointer;
+    background-color: rgb(49, 21, 21);
+    color: white;
+}

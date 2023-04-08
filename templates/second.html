@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/dept.css' %}">
+</head>
+<body>
+    <table border="2px">
+        <tr id="a">
+            <th>deptno</th>
+            <!-- <th>dname</th>
+            <th>loc</th> -->
+        </tr>
+    {% for i in display %}
+        <tr>
+            <td class="b">{{ i.deptno }}</td>
+            <!-- <td class="c">{{ i.dname }}</td>
+            <td class="d">{{ i.loc }}</td> -->
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
