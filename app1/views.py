@@ -41,6 +41,24 @@ def display(request):
 def display_dept(request):
     TO=dept.objects.all()
     d={'display':TO}
-
-
     return render(request,'second.html',d)
+
+def update_emp(request):
+    # you can update the records in two ways
+    # 1.update method
+    # 2.update_or_create method
+
+    # emp.objects.filter(ename='smith').update(job='Salesman')// ONE ROW IS SATISFIED
+    # emp.objects.filter(job='SALESMAN').update(mgr='1234')// MORE THAN ONE ROW IS SATISFIED
+    # emp.objects.filter(job='TRACKER').update(mgr='1234')// ZERO ROWS ARE SATISFYING
+    # emp.objects.all().update(sal='500')// UPDATES ALL ROWS
+
+
+    # TO=dept.objects.get_or_create(deptno='40',dname='checking',loc='random')[0]
+    # TO.save()
+    # emp.objects.update_or_create(ename='madhav',defaults={'empno':'4','ename':'naveen','mgr':'321','hiredate':'1999-12-12','sal':'666','comm':'65','deptno':TO})
+    # emp.objects.filter(job='WATCHMAN').delete()// DELETE THE SPECIFIC DATA
+    # emp.objects.filter(ename='naveen').delete()// DELETE THE SPECIFIC DATA
+    emp.objects.all().delete()
+    d={'display':emp.objects.all()}
+    return render(request,'first.html',d)
